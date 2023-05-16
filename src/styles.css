@@ -1,4 +1,45 @@
-.App {
+body {
   font-family: sans-serif;
+}
+button:hover {
+  cursor: pointer;
+}
+li {
+  margin-right: 8px;
+}
+.input {
+  background-color: #fafaaa;
+  width: 400px;
+  height: 30px;
+  padding: 8px;
+  margin: 8px;
+  border-radius: 2px;
+}
+
+.complate {
+  background-color: #c1ffff;
+  width: 400px;
+  min-height: 200px;
+  padding: 8px;
+  margin: 8px;
+  border-radius: 2px;
+}
+
+.incomplate {
+  background-color: #cbffe2;
+  width: 400px;
+  min-height: 200px;
+  padding: 8px;
+  margin: 8px;
+  border-radius: 2px;
+}
+
+.title {
   text-align: center;
+  margin-top: 0px;
+  font-weight: bold;
+}
+.one_line {
+  display: flex;
+  align-items: center;
 }
