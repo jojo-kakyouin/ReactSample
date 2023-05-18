@@ -2,16 +2,29 @@ import React, { useState } from "react";
 import "./styles.css";
 
 export const App = () => {
-  const [todoText, setTodoText] = useState([""]);
+  const [todoText, setTodoText] = useState("");
   const [incomplateTodos, setIncomplateTodos] = useState(["aaaa", "iiii"]);
   const [complateTodos, setComplateTodos] = useState(["uuu"]);
+  const changeTodoText = (event) => setTodoText(event.target.value);
+  const add = (event) => {
+    if (todoText === "") return;
+    const newTodos = [...incomplateTodos, todoText];
+    setIncomplateTodos(newTodos);
+    setTodoText("");
+  };
 
   return (
     <>
+      //■入力--------------------------------------------------------
       <div className="input">
-        <button>追加</button>
+        <input
+          placeholder="TODOを入力"
+          value={todoText}
+          onChange={changeTodoText}
+        />
+        <button onClick={add}>追加</button>
       </div>
-
+      //■未完了--------------------------------------------------------
       <div className="incomplate">
         <p className="title">未完了のTODO</p>
         <ul>
@@ -26,7 +39,7 @@ export const App = () => {
           })}
         </ul>
       </div>
-
+      //■完了--------------------------------------------------------
       <div className="complate">
         <p className="title">未完了のTODO</p>
         <ul>
