@@ -13,6 +13,13 @@ export const App = () => {
     setTodoText("");
   };
 
+  /* 削除*/
+  const onClickDelete = (index) => {
+    const newTodos1 = [...incomplateTodos];
+    newTodos1.splice(index, 1);
+    setIncomplateTodos(newTodos1);
+  };
+
   return (
     <>
       //■入力--------------------------------------------------------
@@ -28,12 +35,12 @@ export const App = () => {
       <div className="incomplate">
         <p className="title">未完了のTODO</p>
         <ul>
-          {incomplateTodos.map((todo) => {
+          {incomplateTodos.map((todo, index) => {
             return (
               <div key={todo} className="one_line">
                 <li>{todo}</li>
                 <button>完了</button>
-                <button>削除</button>
+                <button onClick={() => onClickDelete(index)}>削除</button>
               </div>
             );
           })}
